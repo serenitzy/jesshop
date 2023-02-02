@@ -1,0 +1,151 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@font-face {
+    font-family: suigeneris;
+    src: url(suigeneris.ttf) format('truetype');
+}
+
+nav .logo {
+    font-family: suigeneris;
+}
+
+body {
+    background-color: #00345b;
+}
+
+nav {
+    background-color: #001920;
+}
+
+nav::after {
+    content: '';
+    clear: both;
+    display: table;
+}
+
+nav ul {
+    float: right;
+    list-style: none;
+    margin-right: 40px;
+    position: relative;
+}
+
+nav ul li {
+    display: inline-block;
+    background-color: #001920;
+    margin: 0px 5px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    line-height: 70px;
+    font-size: 18px;
+    padding: 8px 15px;
+}
+
+a {
+    position: relative;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    background-color: #ffffff;
+    height: 2px;
+    width: 0;
+    left: 0;
+    bottom: 1px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul ul {
+    position: absolute;
+    top: 90px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+nav ul li:hover>ul {
+    top: 70px;
+    border-top: 3px solid #ffffff;
+    opacity: 1;
+    visibility: visible;
+    transition: top .3s;
+}
+
+nav ul ul li {
+    position: relative;
+    margin: 0px;
+    width: 175px;
+    float: none;
+    display: list-item;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+nav ul ul ul li {
+    position: relative;
+    top: -70px;
+    left: 150px;
+}
+
+nav .logo {
+    float: left;
+    color: #ffffff;
+    font-size: 27px;
+    font-weight: 600px;
+    line-height: 70px;
+    padding-left: 60px;
+}
+
+nav ul ul li a {
+    line-height: 50px;
+}
+
+nav ul ul li a:hover {
+    background-color: transparent;
+    color: #ffffffe9;
+}
+
+.about {
+    width: 750px;
+    margin-top: 10px;
+    margin-left: 33%;
+    background: url("about-normal.png");
+    background-size: cover;
+    animation: glitch 3.75s infinite steps(1);
+}
+
+@keyframes glitch {
+
+    0%,
+    55.1%,
+    100% {
+        background: url("about-normal.png");
+        background-size: cover;
+    }
+
+    50% {
+        background: url("about-glitch-1.png");
+        background-size: cover;
+    }
+
+    52.5% {
+        background: url("about-glitch-2.png");
+        background-size: cover;
+    }
+
+    55% {
+        background: url("about-glitch-3.png");
+        background-size: cover;
+    }
+}
